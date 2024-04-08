@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'rest_framework',
+    'rest_registration',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,13 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication'  
     )
 }
+
+REST_REGISTRATION = {
+    'REGISTER_VERIFICATION_ENABLED': False,
+    'REGISTER_EMAIL_VERIFICATION_ENABLED': False,
+    'RESET_PASSWORD_VERIFICATION_ENABLED': False,
+}
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Использование базы данных для хранения сеансов
+SESSION_SAVE_EVERY_REQUEST = True  # Сохранение сеанса после каждого запроса
